@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 12:41:07 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:19:27 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct t_node
 {
@@ -41,5 +42,22 @@ int		is_empty(t_stack *stack);
 void	push(t_stack *stack, t_node	*new_node);
 t_node	*pop(t_stack *stack);
 void	free_stack(t_stack *stack);
+void	init_stack(char **av, t_stack *stack_a);
+int		stack_size(t_stack *stack);
+int		stack_size(t_stack *stack);
+void	initialize(t_stack *stack);
+
+void	sa(t_stack *stack_a);
+void	sb(t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+int		is_empty(t_stack *stack);
+void	ra(t_stack *stack_a);
+void	rb(t_stack *stack_b);
+void	rra(t_stack *stack_a);
+void	rrb(t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 #endif

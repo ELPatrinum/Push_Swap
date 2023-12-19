@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:34:35 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 13:00:46 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/19 13:22:02 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,9 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 		popped = pop(stack_a);
 		push(stack_b, popped);
 	}
+}
+
+int	is_empty(t_stack *stack)
+{
+	return (stack->top == NULL);
 }

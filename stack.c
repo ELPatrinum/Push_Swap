@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:24:26 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 12:28:56 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/19 16:04:39 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ t_node	*creat_node(int value)
 	}
 	new_node->value = value;
 	return (new_node);
-}
-
-int	is_empty(t_stack *stack)
-{
-	return (stack->top == NULL);
 }
 
 void	push(t_stack *stack, t_node	*new_node)
@@ -61,5 +56,24 @@ void	free_stack(t_stack *stack)
 	while (!is_empty(stack))
 	{
 		pop(stack);
+	}
+}
+
+void	init_stack(char **av, t_stack *stack_a)
+{
+	int	i;
+
+	i = 0;
+	if (!av)
+	{
+		write(2, ":INIT_STACK: argument vector is NULL!!\n", 40);
+		exit(EXIT_FAILURE);
+	}
+	while (av[i + 1] != NULL)
+		i++;
+	while (i >= 1)
+	{
+		push(stack_a, creat_node(ft_atoi(av[i])));
+		i--;
 	}
 }

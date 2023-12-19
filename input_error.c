@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:43:39 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 11:07:04 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:58:57 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,11 @@ void	handle_input_error(int ac, char **av)
 	if (ac == 2)
 	{
 		values = ft_split(av[1], ' ');
-		i = 0;
+		i = 1;
 		while (values[i])
 		{
 			tmp = ft_atoi(values[i++]);
-			if (tmp > INT_MAX)
-			{
-				free_(values);
-				exit(1);
-			}
 		}
-		free_(values);
 	}
 	if (ac > 2)
 	{
@@ -53,6 +47,11 @@ int	spaces(char *str)
 
 int	ft_strlen(char *str)
 {
+	if (!str)
+	{
+		write(2, ":strlen: NULL pointer!\n", 24);
+		exit(EXIT_FAILURE);
+	}
 	int	i;
 
 	i = 0;

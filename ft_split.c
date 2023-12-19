@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:09:17 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 11:06:30 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:56:28 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ char	**free_(char **arr)
 	size_t	i;
 
 	i = 0;
-	while (arr[i])
+	if(!arr)
+		return(NULL);
+	while (arr[i] != NULL)
 	{
 		free(arr[i]);
 		i++;
@@ -73,11 +75,11 @@ char	*ft_strdup(const char *str)
 	char	*ptr;
 	size_t	i;
 
-	ptr = malloc((ft_strlen(str) + 1));
+	ptr = malloc((ft_strlen((char *)str) + 1));
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
-	while (i < ft_strlen(str))
+	while (i < (size_t)ft_strlen((char *)str))
 	{
 		ptr[i] = str[i];
 		i++;
@@ -110,6 +112,6 @@ char	**ft_split(char const *s, char c)
 			return (free_(result));
 		index++;
 	}
-	result[strings_number] = NULL;
+	result[strings_number + 1] = NULL;
 	return (result);
 }
