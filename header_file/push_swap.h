@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 15:19:27 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:13:38 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,16 @@ typedef struct t_stack
 
 char	**ft_split(char const *s, char c);
 long	ft_atoi(char *str);
-void	handle_input_error(int ac, char **av);
 char	**free_(char **arr);
 int		spaces(char *str);
 int		ft_strlen(char *str);
 void	empty_string(const char *s);
+void  max_int_(long nbr);
+void  is_already_in(const t_stack *stack, int value);
 char	*ft_strdup(const char *str);
+char	*join_strings(char **array, int start_index);
+char	**make_args(char **array);
+char	*ft_strcpy(char *s1, char *s2);
 t_node	*creat_node(int value);
 int		is_empty(t_stack *stack);
 void	push(t_stack *stack, t_node	*new_node);

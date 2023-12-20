@@ -6,34 +6,11 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:43:39 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 15:58:57 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:22:32 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	handle_input_error(int ac, char **av)
-{
-	char	**values;
-	long	tmp;
-	int		i;
-
-	if (ac == 2)
-	{
-		values = ft_split(av[1], ' ');
-		i = 1;
-		while (values[i])
-		{
-			tmp = ft_atoi(values[i++]);
-		}
-	}
-	if (ac > 2)
-	{
-		i = 1;
-		while (av[i])
-			tmp = ft_atoi(av[i++]);
-	}
-}
 
 int	spaces(char *str)
 {
@@ -66,7 +43,31 @@ void	empty_string(const char *s)
 {
 	if (ft_strlen((char *)s) == spaces((char *)s))
 	{
-		write(2, "Push-SWAP:ERROR: Argument is an empty string!\n", 47);
+		write(2, "Error\n", 7);
 		exit(1);
 	}
+}
+
+void  max_int_(long nbr)
+{
+  if (nbr > 2147483647 || nbr < -2147483648)
+  {
+    write(2, "Error\n", 7);
+		exit(1);
+  }
+}
+
+void is_already_in(const t_stack *stack, int value)
+{
+  t_node *current = stack->top;
+
+  while (current != NULL)
+  {
+    if (current->value == value)
+    {
+      write(2, "Error\n", 7);
+		  exit(1);
+    }
+     current = current->next;
+  }
 }

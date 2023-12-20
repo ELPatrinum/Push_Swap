@@ -54,44 +54,8 @@ void	rb(t_stack *stack_b)
 	}
 }
 
-void	rra(t_stack *stack_a)
+void	rr(t_stack *stack_a, t_stack *stack_b)
 {
-	t_node	*first;
-	t_node	*last;
-
-	if (stack_a->top && stack_a->top->next)
-	{
-		first = stack_a->top;
-		last = stack_a->top;
-		while (last->next)
-		{
-			last = last->next;
-		}
-		last->prev->next = NULL;
-		first->prev = last;
-		last->next = first;
-		last->prev = NULL;
-		stack_a->top = last;
-	}
-}
-
-void	rrb(t_stack *stack_b)
-{
-	t_node	*first;
-	t_node	*last;
-
-	if (stack_b->top && stack_b->top->next)
-	{
-		first = stack_b->top;
-		last = stack_b->top;
-		while (last->next)
-		{
-			last = last->next;
-		}
-		last->prev->next = NULL;
-		first->prev = last;
-		last->next = first;
-		last->prev = NULL;
-		stack_b->top = last;
-	}
+	ra(stack_a);
+	rb(stack_b);
 }

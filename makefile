@@ -6,7 +6,7 @@
 #    By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/19 14:34:45 by muel-bak          #+#    #+#              #
-#    Updated: 2023/12/19 15:51:03 by muel-bak         ###   ########.fr        #
+#    Updated: 2023/12/19 17:43:09 by muel-bak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = 
 
 SRC_FILES = push_swap_main.c operations.c operations_.c operations__.c input_error.c ft_atoi.c \
-			ft_split.c stack.c
+			ft_split.c stack.c ft_join_args.c 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 HEADER_FILE = push_swap.h
 

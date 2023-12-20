@@ -12,40 +12,6 @@
 
 #include "push_swap.h"
 
-void	sa(t_stack *stack_a)
-{
-	t_node	*first;
-	t_node	*second;
-
-	if (stack_a->top && stack_a->top->next)
-	{
-		first = stack_a->top;
-		second = stack_a->top->next;
-		first->next = second->next;
-		second->prev = first->prev;
-		first->prev = second;
-		second->next = first;
-		stack_a->top = second;
-	}
-}
-
-void	sb(t_stack *stack_b)
-{
-	t_node	*first;
-	t_node	*second;
-
-	if (stack_b->top && stack_b->top->next)
-	{
-		first = stack_b->top;
-		second = stack_b->top->next;
-		first->next = second->next;
-		second->prev = first->prev;
-		first->prev = second;
-		second->next = first;
-		stack_b->top = second;
-	}
-}
-
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*popped;
@@ -66,9 +32,4 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 		popped = pop(stack_a);
 		push(stack_b, popped);
 	}
-}
-
-int	is_empty(t_stack *stack)
-{
-	return (stack->top == NULL);
 }

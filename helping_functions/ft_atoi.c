@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:50:57 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 15:54:52 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:21:55 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,16 @@ long	_error(char *str, int j)
 	int	i;
 
 	i = j;
+  if (str[i] < '0' || str[i] > '9')
+  {
+			write(2, "Error\n", 7);
+			exit(EXIT_FAILURE);
+  }
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
 		{
-			write(2, "Push-SWAP:ERROR: Argument is not a valid number!\n", 50);
+			write(2, "Error\n", 7);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -50,7 +55,7 @@ long	ft_atoi(char *str)
 	sign = 1;
 	result = 0;
 	tmp = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
