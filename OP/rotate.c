@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:38:09 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 12:52:34 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:03:01 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	rb(t_stack *stack_b)
 		last->next = first;
 		first->prev = last;
 		first->next = NULL;
+		write(1, "rb\n", 3);
 	}
 }
 

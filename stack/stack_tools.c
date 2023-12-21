@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 10:36:29 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 12:19:31 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 14:23:01 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	stack_size(t_stack *stack)
 	}
 	return (size);
 }
+
 void	initialize_stack(t_stack *stack_a, t_stack *stack_b, char **av)
 {
 	initialize(stack_a);

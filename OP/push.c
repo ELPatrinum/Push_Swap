@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:34:35 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 10:50:53 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:05:51 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	{
 		popped = pop(stack_b);
 		push(stack_a, popped);
+		write(1, "pa\n", 3);
 	}
 }
 
@@ -31,5 +32,6 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	{
 		popped = pop(stack_a);
 		push(stack_b, popped);
+		write(1, "rb\n", 3);
 	}
 }
