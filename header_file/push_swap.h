@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 16:56:56 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 23:22:45 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ long	ft_atoi(char *str);
 char	**free_(char **arr);
 int		spaces(char *str);
 int		ft_strlen(char *str);
+int		len_without_zero(char *str);
 void	empty_string(const char *s);
 void	empty_args(int ac, char **av);
 void	max_int_(long nbr);
