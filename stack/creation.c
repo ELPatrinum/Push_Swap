@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   creation.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:24:26 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 16:04:39 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 11:58:49 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../header_file/push_swap.h"
 
 t_node	*creat_node(int value)
 {
@@ -33,13 +33,13 @@ void	initialize(t_stack *stack)
 
 void	init_stack(char **av, t_stack *stack_a)
 {
-	int	i;
-  long nbr;
+	int		i;
+	long	nbr;
 
 	i = 0;
 	if (!av)
 	{
-		write(2, ":INIT_STACK: argument vector is NULL!!\n", 40);
+		write(2, "Error\n", 7);
 		exit(EXIT_FAILURE);
 	}
 	while (av[i + 1] != NULL)

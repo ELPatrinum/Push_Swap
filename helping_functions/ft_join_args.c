@@ -6,81 +6,79 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:19:57 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 18:13:10 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 11:42:03 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "../header_file/push_swap.h"
 
 char	*join_strings(char **array, int start_index)
 {
-    // Find the length of the array
-    int len = 0;
-    while (array[len] != NULL)
+	int		len;
+	int		totallength;
+	int		i;
+	char	*result;
+
+	len = 0;
+	while (array[len] != NULL)
+		len++;
+	totallength = 0;
+	i = start_index;
+	while (i < len)
 	{
-        len++;
-    }
-
-    // Calculate the total length of the joined string
-    int totalLength = 0;
-    int i = start_index;
-    while (i < len)
+		totallength += ft_strlen(array[i]);
+		i++;
+	}
+	totallength += len - start_index - 1;
+	result = (char *)malloc(totallength + 1);
+	if (result == NULL)
 	{
-        totalLength += ft_strlen(array[i]);
-        i++;
-    }
-
-    // Add space for the separators (spaces) between elements
-    totalLength += len - start_index - 1;
-
-    // Allocate memory for the joined string
-    char* result = (char*)malloc(totalLength + 1); // +1 for the null terminator
-    if (result == NULL)
-	{
-        perror("Memory allocation error");
-        exit(EXIT_FAILURE);
-    }
-
-    // Copy elements into the result string
-    i = start_index;
-    int resultIndex = 0;
-    while (i < len)
-	{
-        ft_strcpy(result + resultIndex, array[i]);
-        resultIndex += ft_strlen(array[i]);
-        if (i < len - 1) {
-            // Add a space separator if not the last element
-            result[resultIndex] = ' ';
-            resultIndex++;
-        }
-        i++;
-    }
-
-    // Null-terminate the result string
-    result[resultIndex] = '\0';
-
-    return result;
+		write(2, "Memory allocation error\n", 25);
+		exit(EXIT_FAILURE);
+	}
+	copy_elements(start_index, array, result, len);
+	return (result);
 }
 
-char *ft_strcpy(char *s1, char *s2)
+void	copy_elements(int start_index, char **array, char *result, int len)
 {
-	int i = 0;
+	int	i;
+	int	resultindex;
+
+	i = start_index;
+	resultindex = 0;
+	while (i < len)
+	{
+		ft_strcpy(result + resultindex, array[i]);
+		resultindex += ft_strlen(array[i]);
+		if (i < len - 1) 
+		{
+			result[resultindex] = ' ';
+			resultindex++;
+		}
+		i++;
+	}
+	result[resultindex] = '\0';
+}
+
+char	*ft_strcpy(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
 	while (s2[i])
 	{
 		s1[i] = s2[i];
 		i++;
 	}
-	return s1;
+	return (s1);
 }
+
 char	**make_args(char **array)
 {
 	char	*pre_args;
 	char	**args;
-	
+
 	pre_args = join_strings(array, 1);
 	empty_string((const char *)pre_args);
 	args = ft_split (pre_args, ' ');

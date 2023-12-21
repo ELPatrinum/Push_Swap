@@ -6,11 +6,11 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:50:57 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 18:21:55 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 11:34:38 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../header_file/push_swap.h"
 
 static long	calc_result(long tmp, long result, char c, int sign)
 {
@@ -27,11 +27,11 @@ long	_error(char *str, int j)
 	int	i;
 
 	i = j;
-  if (str[i] < '0' || str[i] > '9')
-  {
-			write(2, "Error\n", 7);
-			exit(EXIT_FAILURE);
-  }
+	if (str[i] < '0' || str[i] > '9')
+	{
+		write(2, "Error\n", 7);
+		exit(EXIT_FAILURE);
+	}
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')

@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 18:13:38 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:25:13 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ char	**free_(char **arr);
 int		spaces(char *str);
 int		ft_strlen(char *str);
 void	empty_string(const char *s);
-void  max_int_(long nbr);
-void  is_already_in(const t_stack *stack, int value);
+void	empty_args(int ac, char **av);
+void	max_int_(long nbr);
+void	is_already_in(const t_stack *stack, int value);
 char	*ft_strdup(const char *str);
 char	*join_strings(char **array, int start_index);
 char	**make_args(char **array);
@@ -50,6 +51,8 @@ void	init_stack(char **av, t_stack *stack_a);
 int		stack_size(t_stack *stack);
 int		stack_size(t_stack *stack);
 void	initialize(t_stack *stack);
+void	initialize_stack(t_stack *stack_a, t_stack *stack_b, char **av);
+void	copy_elements(int start_index, char **array, char *result, int len);
 
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);

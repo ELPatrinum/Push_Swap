@@ -6,11 +6,11 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:43:39 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 18:22:32 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 11:56:59 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../header_file/push_swap.h"
 
 int	spaces(char *str)
 {
@@ -24,16 +24,21 @@ int	spaces(char *str)
 
 int	ft_strlen(char *str)
 {
-	if (!str)
-	{
-		write(2, ":strlen: NULL pointer!\n", 24);
-		exit(EXIT_FAILURE);
-	}
 	int	i;
 
+	if (!str)
+	{
+		write(2, "Error\n", 7);
+		exit(EXIT_FAILURE);
+	}
 	i = 0;
 	while (str[i] != '\0')
 	{
+		if (str[i] == '\t')
+		{
+			write(2, "Error\n", 7);
+			exit(EXIT_FAILURE);
+		}
 		i++;
 	}
 	return (i);
@@ -48,26 +53,27 @@ void	empty_string(const char *s)
 	}
 }
 
-void  max_int_(long nbr)
+void	max_int_(long nbr)
 {
-  if (nbr > 2147483647 || nbr < -2147483648)
-  {
-    write(2, "Error\n", 7);
+	if (nbr > INT_MAX || nbr < INT_MIN)
+	{
+		write(2, "Error\n", 7);
 		exit(1);
-  }
+	}
 }
 
-void is_already_in(const t_stack *stack, int value)
+void	is_already_in(const t_stack *stack, int value)
 {
-  t_node *current = stack->top;
+	t_node	*current;
 
-  while (current != NULL)
-  {
-    if (current->value == value)
-    {
-      write(2, "Error\n", 7);
-		  exit(1);
-    }
-     current = current->next;
-  }
+	current = stack->top;
+	while (current != NULL)
+	{
+		if (current->value == value)
+		{
+			write(2, "Error\n", 7);
+			exit(1);
+		}
+		current = current->next;
+	}
 }

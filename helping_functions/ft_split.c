@@ -6,11 +6,11 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:09:17 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/19 15:56:28 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 11:42:29 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../header_file/push_swap.h"
 
 static size_t	count_strings(char const *s, char c)
 {
@@ -59,8 +59,8 @@ char	**free_(char **arr)
 	size_t	i;
 
 	i = 0;
-	if(!arr)
-		return(NULL);
+	if (!arr)
+		return (NULL);
 	while (arr[i] != NULL)
 	{
 		free(arr[i]);
