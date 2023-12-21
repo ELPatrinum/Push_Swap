@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 23:23:43 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 12:25:40 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:37:32 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int	main(int ac, char **av)
 	empty_args(ac, av);
 	av = make_args(av);
 	initialize_stack(&stack_a, &stack_b, av);
+	check_and_sort(&stack_a, &stack_b);
 	print_stack(&stack_a);
 }
