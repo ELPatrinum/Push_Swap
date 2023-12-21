@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:19:57 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 11:42:03 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/21 16:02:58 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	copy_elements(int start_index, char **array, char *result, int len)
 	{
 		ft_strcpy(result + resultindex, array[i]);
 		resultindex += ft_strlen(array[i]);
-		if (i < len - 1) 
+		if (i < len - 1)
 		{
 			result[resultindex] = ' ';
 			resultindex++;
