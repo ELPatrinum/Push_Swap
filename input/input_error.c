@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:43:39 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/22 03:36:48 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/22 11:24:22 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ bool	is_all_digit(char *str, int sign)
 	}
 	return (true);
 }
+
 bool	is_already_in(const t_stack *stack, int value)
 {
 	t_node	*current;

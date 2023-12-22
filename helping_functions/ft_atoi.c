@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:50:57 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/22 03:17:22 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/22 11:23:21 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ long	ft_atoi(char *str)
 	long	result;
 	long	tmp;
 
-	(1 == 1) && (i = 0, sign = 1, result = 0, tmp = 0);
+	i = 0;
+	sign = 1;
+	result = 0;
+	tmp = 0;
 	while (str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
