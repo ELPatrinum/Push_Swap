@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:09:17 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 11:42:29 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/22 02:20:54 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	empty_string(s);
 	i = 0;
 	index = 1;
 	strings_number = count_strings(s, c);

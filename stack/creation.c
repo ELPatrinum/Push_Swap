@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:24:26 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 11:58:49 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/22 03:24:46 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,33 +23,41 @@ t_node	*creat_node(int value)
 		exit(EXIT_FAILURE);
 	}
 	new_node->value = value;
+	new_node->indx = 0;
 	return (new_node);
 }
 
 void	initialize(t_stack *stack)
 {
 	stack->top = NULL;
+	stack->len = 0;
 }
 
-void	init_stack(char **av, t_stack *stack_a)
+bool	init_stack(char **av, t_stack *stack_a)
 {
 	int		i;
+	int		sign;
 	long	nbr;
 
 	i = 0;
-	if (!av)
-	{
-		write(2, "Error\n", 7);
-		exit(EXIT_FAILURE);
-	}
 	while (av[i + 1] != NULL)
 		i++;
 	while (i >= 1)
 	{
+		sign = 0;
+		if (av[i][0] == '-' || av[i][0] == '+')
+			sign++;
+		if (!is_all_digit(av[i], sign))
+			return (false);
+		if (len_without_zero(av[i]) > 11)
+			return (false);
 		nbr = ft_atoi(av[i]);
-		max_int_(nbr);
-		is_already_in(stack_a, nbr);
+		if (!fits_in_int(nbr))
+			return (false);
+		if (is_already_in(stack_a, nbr))
+			return (false);
 		push(stack_a, creat_node(nbr));
 		i--;
 	}
+	return (true);
 }

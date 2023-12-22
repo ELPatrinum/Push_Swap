@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:50:57 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 22:05:44 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/22 03:17:22 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,6 @@ static long	calc_result(long tmp, long result, char c, int sign)
 	return (tmp);
 }
 
-long	_error(char *str, int j)
-{
-	int	i;
-
-	i = j;
-	if ((str[i] < '0' || str[i] > '9') || len_without_zero(str) > 11)
-	{
-		write(2, "Error\n", 7);
-		exit(EXIT_FAILURE);
-	}
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-		{
-			write(2, "Error\n", 7);
-			exit(EXIT_FAILURE);
-		}
-		i++;
-	}
-	return (0);
-}
-
 long	ft_atoi(char *str)
 {
 	int		i;
@@ -51,10 +29,7 @@ long	ft_atoi(char *str)
 	long	result;
 	long	tmp;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	tmp = 0;
+	(1 == 1) && (i = 0, sign = 1, result = 0, tmp = 0);
 	while (str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
@@ -63,7 +38,6 @@ long	ft_atoi(char *str)
 			sign *= -1;
 		i++;
 	}
-	_error(str, i);
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		result = calc_result(tmp, result, str[i], sign);

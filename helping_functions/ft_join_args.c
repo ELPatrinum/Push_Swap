@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:19:57 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 16:02:58 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/22 02:26:11 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,10 @@ char	**make_args(char **array)
 	char	**args;
 
 	pre_args = join_strings(array, 1);
-	empty_string((const char *)pre_args);
+	if (pre_args[0] == '\0')
+		return (NULL);
+	if (is_spaces(pre_args))
+		return (free(pre_args), NULL);
 	args = ft_split (pre_args, ' ');
 	free(pre_args);
 	return (args);

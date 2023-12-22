@@ -1,34 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_error__.c                                    :+:      :+:    :+:   */
+/*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 12:22:28 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 23:23:42 by muel-bak         ###   ########.fr       */
+/*   Created: 2023/12/22 01:28:53 by muel-bak          #+#    #+#             */
+/*   Updated: 2023/12/22 03:43:44 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header_file/push_swap.h"
 
-void	empty_args(int ac, char **av)
+char	**is_valid(int ac, char **av)
+{
+	if (empty_args(ac, av))
+		return (NULL);
+	av = make_args(av);
+	return (av);
+}
+
+bool	fits_in_int(long nbr)
+{
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		return (false);
+	else
+		return (true);
+}
+
+bool	empty_args(int ac, char **av)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	if (ac == 1)
-		exit(EXIT_FAILURE);
-	while (av[i])
+		return (true);
+	while (av[++i])
 	{
-		empty_string(av[i]);
-		if (!*av[1])
-		{
-			write(2, "Error\n", 7);
-			exit(EXIT_FAILURE);
-		}
-		i++;
+		if (!*av[i] || is_spaces(av[i]))
+			return (true);
 	}
+	return (false);
 }
 
 int	len_without_zero(char *str)

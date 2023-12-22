@@ -6,7 +6,7 @@
 #    By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/19 14:34:45 by muel-bak          #+#    #+#              #
-#    Updated: 2023/12/21 16:31:46 by muel-bak         ###   ########.fr        #
+#    Updated: 2023/12/22 03:02:00 by muel-bak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC_FILES = ./helping_functions/ft_atoi.c  ./helping_functions/ft_join_args.c ./helping_functions/ft_split.c \
-			./input/input_error.c ./input/input_error__.c		\
+			./input/input_error.c ./input/input.c		\
 			./OP/push.c ./OP/reverse_rotate.c ./OP/rotate.c ./OP/swap.c			\
-			./stack/creation.c ./stack/push_and_pop.c ./stack/stack_tools.c		\
+			./stack/creation.c ./stack/push_and_pop.c ./stack/stack_tools.c	./stack/indixing.c	\
 			./sorting/sorting_tools.c ./sorting/sorting_algorithm.c	\
 			./push_swap_main.c		\
 

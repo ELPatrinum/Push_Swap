@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:24:26 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 10:50:41 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/22 03:25:57 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	push(t_stack *stack, t_node	*new_node)
 	if (!is_empty(stack))
 		stack->top->prev = new_node;
 	stack->top = new_node;
+	stack->len++;
 }
 
 t_node	*pop(t_stack *stack)
