@@ -17,7 +17,8 @@ long	get_min(t_stack *stack)
 	long	min;
 	t_node	*current;
 
-	(1 == 1) && (current = stack->top, min = 2147483648);
+	current = stack->top;
+  min = 2147483648;
 	while (current)
 	{
 		if (current->value < min && !current->indx)
@@ -33,7 +34,8 @@ int	set_indx(t_stack *stack)
 	int		i;
 	long	min;
 
-	(1 == 1) && (current = stack->top, i = 1);
+	current = stack->top;
+  i = 1;
 	if (stack)
 	{
 		while (current)
