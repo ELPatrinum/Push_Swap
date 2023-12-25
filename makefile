@@ -27,8 +27,6 @@ HEADER_FILE = ./header_file/push_swap.h
 
 NAME = push_swap
 all: $(NAME)
-	@make clean
-	@echo "Programe created succesfuly : push_swap"
 
 $(NAME): $(OBJ_FILES) $(HEADER_FILE)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_FILES)
