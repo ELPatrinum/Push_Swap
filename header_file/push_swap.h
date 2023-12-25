@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/22 03:19:27 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/25 13:10:17 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ int		is_sec_sorted(t_stack*stack);
 void	check_and_sort(t_stack *stack_a, t_stack *stack_b);
 void	sort_three(t_stack *stack_a);
 
+int		first_half_search(t_stack *stack, int *indx);
+int		sec_half_search(t_stack *stack, int *indx);
+void	get_min_to_top(t_stack *stack_a, int *indx);
+void	push_min_to_b(t_stack *stack_a, t_stack *stack_b);
+void	sort(t_stack *stack_a, t_stack *stack_b);
+
 int		indexed_stack_size(t_stack *stack);
 long	get_min(t_stack *stack);
 int		set_indx(t_stack *stack);
@@ -84,5 +90,7 @@ void	rrb(t_stack *stack_b);
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
+
+void	print_stack(t_stack *stack);
 
 #endif

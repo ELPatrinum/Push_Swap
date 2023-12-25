@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:24:26 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/22 03:25:57 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/25 15:09:25 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_node	*pop(t_stack *stack)
 	}
 	popped = stack->top;
 	stack->top = stack->top->next;
+	stack->len--;
 	if (!is_empty(stack))
 		stack->top->prev = NULL;
 	return (popped);
