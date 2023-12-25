@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 23:29:11 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/22 03:25:35 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/25 12:01:29 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ long	get_min(t_stack *stack)
 	long	min;
 	t_node	*current;
 
-	(1 == 1) && (current = stack->top, min = 2147483648);
+	current = stack->top;
+	min = 2147483648;
 	while (current)
 	{
 		if (current->value < min && !current->indx)
@@ -33,7 +34,8 @@ int	set_indx(t_stack *stack)
 	int		i;
 	long	min;
 
-	(1 == 1) && (current = stack->top, i = 1);
+	current = stack->top;
+	i = 1;
 	if (stack)
 	{
 		while (current)
