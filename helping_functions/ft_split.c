@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:09:17 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/22 02:20:54 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:24:58 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	index = 1;
 	strings_number = count_strings(s, c);
-	result = (char **)malloc(sizeof(char *) * (strings_number + 1));
+	result = (char **)malloc(sizeof(char *) * (strings_number + 2));
 	if (!result)
 		return (NULL);
 	result[0] = ft_strdup("push_swap");

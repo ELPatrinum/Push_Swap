@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 23:23:43 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 09:27:21 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:30:59 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int	main(int ac, char **av)
 	if (!initialize_stack(&stack_a, &stack_b, av))
 	{
 		write(2, "Error\n", 7);
-		return (1);
+		free_stack(&stack_a);
+		return (free_(av), 1);
 	}
 	if (!is_sorted_ascending(&stack_a))
 	{
@@ -54,4 +55,5 @@ int	main(int ac, char **av)
 		check_and_sort(&stack_a, &stack_b);
 	}
 	free_stack(&stack_a);
+	free_(av);
 }
