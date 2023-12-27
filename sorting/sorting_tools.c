@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/25 13:03:28 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 07:41:33 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,23 @@ int	is_sec_sorted(t_stack*stack)
 
 void	check_and_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	if (stack_size(stack_a) == 2)
+	
+	if (stack_a->len == 2)
 	{
-		(void)stack_b;
 		if (!(is_sorted(stack_a)))
 			sa(stack_a);
 	}
-	else if (stack_size(stack_a) == 3)
+	else if (stack_a->len == 3)
 		sort_three(stack_a);
-	else if (stack_size(stack_a) > 3)
-		sort(stack_a, stack_b);
+	// else if (stack_a->len == 4 && stack_a->len == 5)
+	// 	sort_small(stack_a, stack_b);
+	else
+	{
+		push_to_b(stack_a, stack_b);
+		if (!(is_sorted(stack_a)))
+			sort_three(stack_a);
+		big_sort(stack_a, stack_b);
+	}
 }
 
 bool	is_sorted_ascending(t_stack *stack)
@@ -60,4 +67,30 @@ bool	is_sorted_ascending(t_stack *stack)
 		current = current->next;
 	}
 	return (true);
+}
+
+void	sort_three(t_stack *stack_a)
+{
+	if (!(is_sorted(stack_a)) && is_sec_sorted(stack_a))
+	{
+		if (stack_a->top->value > stack_a->top->next->next->value)
+			ra(stack_a);
+		else
+			sa(stack_a);
+	}
+	else if ((is_sorted(stack_a)) && !is_sec_sorted(stack_a))
+	{
+		if (stack_a->top->value > stack_a->top->next->next->value)
+			rra(stack_a);
+		else
+		{
+			sa(stack_a);
+			ra(stack_a);
+		}
+	}
+	else if (!(is_sorted(stack_a)) && !is_sec_sorted(stack_a))
+	{
+		ra(stack_a);
+		sa(stack_a);
+	}
 }

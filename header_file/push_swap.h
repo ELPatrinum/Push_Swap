@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/25 13:10:17 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 07:20:00 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,16 @@ typedef struct t_node
 typedef struct t_stack
 {
 	t_node	*top;
+	t_node	*tail;
 	int		len;
 }	t_stack;
+
+typedef struct t_indx
+{
+	int	l1;
+	int	l2;
+	int	l3;
+}	t_indx;
 
 // ---------pars----------
 bool	is_spaces(char *str);
@@ -69,12 +77,24 @@ int		is_sec_sorted(t_stack*stack);
 void	check_and_sort(t_stack *stack_a, t_stack *stack_b);
 void	sort_three(t_stack *stack_a);
 
-int		first_half_search(t_stack *stack, int *indx);
-int		sec_half_search(t_stack *stack, int *indx);
-void	get_min_to_top(t_stack *stack_a, int *indx);
-void	push_min_to_b(t_stack *stack_a, t_stack *stack_b);
-void	sort(t_stack *stack_a, t_stack *stack_b);
-
+///////
+void	exec_top(t_stack *stack_a, t_stack *stack_b, int * check, int max);
+void	exec_bot(t_stack *stack_a, t_stack *stack_b , int *check , int max);
+void	big_sort(t_stack *stack_a, t_stack *stack_b);
+void	push_to_b(t_stack *stack_a, t_stack *stack_b);
+void	get_max_to_top(t_stack *stack_a, t_stack *stack_b);
+void	push_max_to_a(t_stack *stack_a, t_stack *stack_b);
+int		max_search(t_stack *stack, int indx);
+int		get_tail(t_stack *stack);
+bool	max_tail_search(t_node *stack, int indx);
+// t_node	*get_tail(t_stack *stack);
+///////
+int    first_half_search(t_stack *stack, int *indx);
+int    sec_half_search(t_stack *stack, int *indx);
+void    get_min_to_top(t_stack *stack_a, int *indx);
+void    push_min_to_b(t_stack *stack_a, t_stack *stack_b);
+void    sort_small(t_stack *stack_a, t_stack *stack_b);
+////////
 int		indexed_stack_size(t_stack *stack);
 long	get_min(t_stack *stack);
 int		set_indx(t_stack *stack);

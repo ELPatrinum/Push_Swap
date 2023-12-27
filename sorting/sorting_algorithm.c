@@ -6,34 +6,37 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:30:52 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 16:31:23 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 07:40:02 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header_file/push_swap.h"
-
-void	sort_three(t_stack *stack_a)
+//100
+void	push_to_b(t_stack *stack_a, t_stack *stack_b)
 {
-	if (!(is_sorted(stack_a)) && is_sec_sorted(stack_a))
+	t_indx i;
+
+	(1 == 1) && (i.l1 =  stack_a->len / 3, i.l2 =  stack_a->len / 6 , i.l3 = 0);
+	while (stack_a->len != 3)
 	{
-		if (stack_a->top->value > stack_a->top->next->next->value)
-			ra(stack_a);
-		else
-			sa(stack_a);
-	}
-	else if ((is_sorted(stack_a)) && !is_sec_sorted(stack_a))
-	{
-		if (stack_a->top->value > stack_a->top->next->next->value)
-			rra(stack_a);
-		else
+		if (stack_a->top->indx < i.l1)
 		{
-			sa(stack_a);
+			if (stack_a->top->indx < i.l2)
+				pb(stack_a, stack_b);
+			else
+			{
+				pb(stack_a, stack_b);
+				rb(stack_b);
+			}
+		}
+		else 
 			ra(stack_a);
+		if (i.l1  - 1 == stack_b->len)
+		{
+			i.l3 = i.l1;
+			i.l1 += stack_a->len / 3;
+			i.l2 = i.l3 + stack_a->len / 6;
 		}
 	}
-	else if (!(is_sorted(stack_a)) && !is_sec_sorted(stack_a))
-	{
-		ra(stack_a);
-		sa(stack_a);
-	}
 }
+

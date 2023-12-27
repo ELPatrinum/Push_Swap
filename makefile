@@ -6,7 +6,7 @@
 #    By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/19 14:34:45 by muel-bak          #+#    #+#              #
-#    Updated: 2023/12/25 13:00:02 by muel-bak         ###   ########.fr        #
+#    Updated: 2023/12/27 05:32:39 by muel-bak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_FILES = ./helping_functions/ft_atoi.c  ./helping_functions/ft_join_args.c ./
 			./input/input_error.c ./input/input.c		\
 			./OP/push.c ./OP/reverse_rotate.c ./OP/rotate.c ./OP/swap.c			\
 			./stack/creation.c ./stack/push_and_pop.c ./stack/stack_tools.c	./stack/indixing.c	\
-			./sorting/sorting_tools.c ./sorting/sorting_algorithm.c ./sorting/sorting_tools_2.c	\
+			./sorting/sorting_tools.c ./sorting/sorting_algorithm.c ./sorting/sorting_algorithm_tools.c	./sorting/sort_small.c ./sorting/utile.c\
 			./push_swap_main.c		\
 
 
