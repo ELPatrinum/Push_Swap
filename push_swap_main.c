@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 23:23:43 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 08:39:27 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 08:52:59 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_stack(t_stack *stack)
 		return;
 	}
 	printf("--------------- \n");
-	printf("Stack elements: \n");
+	printf("Stack elements:\n");
 	current = stack->top;
 	while (current != NULL)
 	{
