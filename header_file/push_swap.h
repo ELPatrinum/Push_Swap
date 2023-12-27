@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 12:18:34 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:26:22 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,8 @@ void	exec_top(t_stack *stack_a, t_stack *stack_b, int * check, int max);
 void	exec_bot(t_stack *stack_a, t_stack *stack_b , int *check , int max);
 void	big_sort(t_stack *stack_a, t_stack *stack_b);
 void	push_to_b(t_stack *stack_a, t_stack *stack_b);
-void	get_max_to_top(t_stack *stack_a, t_stack *stack_b);
-void	push_max_to_a(t_stack *stack_a, t_stack *stack_b);
 int		max_search(t_stack *stack, int indx);
 int		get_tail(t_stack *stack);
-bool	max_tail_search(t_node *stack, int indx);
 int		search_max(t_stack *stack_a);
 ///////
 void	sort_three(t_stack *stack_a);

@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 02:43:34 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 12:21:37 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:24:59 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	get_min1(t_stack *stack, int val)
 }
 
 
-int	get_distance(t_stack *stack, int index)
+static int	get_distance(t_stack *stack, int index)
 {
 	t_node	*head;
 	int		distance;
@@ -94,4 +94,3 @@ void	sort_5(t_stack *stack_a, t_stack *stack_b)
 	sort_4(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }
-
