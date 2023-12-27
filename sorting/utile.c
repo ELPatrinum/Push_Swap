@@ -38,11 +38,6 @@ void	exec_top(t_stack *stack_a, t_stack *stack_b, int * check, int max)
 {
 	while (stack_b->top->indx != stack_a->top->indx - 1 )
 	{
-		// printf("stack_b->top->indx :%d: stack_a->top->indx -1 :%d:\n",stack_b->top->indx, stack_a->top->indx - 1 );
-		// print_stack(stack_a);
-		// print_stack(stack_b);
-		// printf("get_tail %d\n", get_tail(stack_a));
-		// sleep(4);
 		if (!*check || stack_b->top->indx > get_tail(stack_a))
 		{
 			pa(stack_a,stack_b);

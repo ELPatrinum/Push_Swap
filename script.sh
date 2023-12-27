@@ -1,6 +1,6 @@
 #!bin/bash
 
-max=10
+max=1000
 for((i=0; i < $max; i++))
 do
 	arg=$(seq 0 499| sort -R)

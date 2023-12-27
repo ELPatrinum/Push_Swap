@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 07:20:00 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:57:35 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void    sort_small(t_stack *stack_a, t_stack *stack_b);
 ////////
 int		indexed_stack_size(t_stack *stack);
 long	get_min(t_stack *stack);
-int		set_indx(t_stack *stack);
+void	set_indx(t_stack *stack);
 
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
