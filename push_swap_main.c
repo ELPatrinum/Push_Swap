@@ -6,31 +6,11 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 23:23:43 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 11:30:59 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 13:52:53 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header_file/push_swap.h"
-
-void	print_stack(t_stack *stack)
-{
-	t_node	*current;
-
-	if (is_empty(stack))
-	{
-		printf("Stack is empty\n");
-		return;
-	}
-	printf("--------------- \n");
-	printf("Stack elements:\n");
-	current = stack->top;
-	while (current != NULL)
-	{
-		printf(":%d: %d  :%d:\n", current->value, stack->len, current->indx);
-		current = current->next;
-	}
-	printf("---------------\n");
-}
 
 int	main(int ac, char **av)
 {
