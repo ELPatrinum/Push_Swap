@@ -6,12 +6,12 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:30:52 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 07:40:02 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 10:15:58 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header_file/push_swap.h"
-//100
+
 void	push_to_b(t_stack *stack_a, t_stack *stack_b)
 {
 	t_indx i;

@@ -34,6 +34,7 @@ int	 max_search(t_stack *stack, int indx)
 	}	
 		return (0);
 }
+
 void	exec_top(t_stack *stack_a, t_stack *stack_b, int * check, int max)
 {
 	while (stack_b->top->indx != stack_a->top->indx - 1 )

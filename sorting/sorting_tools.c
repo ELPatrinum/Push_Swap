@@ -6,37 +6,12 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 09:30:36 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 10:23:27 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header_file/push_swap.h"
 
-int	is_sorted(t_stack *stack)
-{
-	t_node *tmp =stack->top;
-	t_node *tmp1;
-	while (tmp)
-	{	
-		tmp1 = stack->top;
-		while (tmp1)
-		{
-			if (tmp1->value < tmp->value)
-				return (0);
-			tmp1 = tmp1->next;
-		}
-		tmp = tmp->next;
-	}
-	return (1);
-}
-
-int	is_sec_sorted(t_stack*stack)
-{
-	if (stack->top->next->value < stack->top->next->next->value)
-		return (1);
-	else
-		return (0);
-}
 
 void	check_and_sort(t_stack *stack_a, t_stack *stack_b)
 {
@@ -55,10 +30,37 @@ void	check_and_sort(t_stack *stack_a, t_stack *stack_b)
 		push_to_b(stack_a, stack_b);
 		if (!(is_sorted(stack_a)))
 			sort_three(stack_a);
-		// print_stack(stack_a);
-		// sleep(20);
 		big_sort(stack_a, stack_b);
 	}
+}
+
+void	sort_three(t_stack *stack_a)
+{
+	int max = search_max(stack_a);
+	if (stack_a->top->indx == max)
+		ra(stack_a);
+	else if(stack_a->top->next->indx == max)
+		rra(stack_a);
+	if(stack_a->top->indx > stack_a->top->next->indx)
+		sa(stack_a);	
+}
+
+int	is_sorted(t_stack *stack)
+{
+	t_node *tmp =stack->top;
+	t_node *tmp1;
+	while (tmp)
+	{	
+		tmp1 = stack->top;
+		while (tmp1)
+		{
+			if (tmp1->value < tmp->value)
+				return (0);
+			tmp1 = tmp1->next;
+		}
+		tmp = tmp->next;
+	}
+	return (1);
 }
 
 bool	is_sorted_ascending(t_stack *stack)
@@ -94,14 +96,4 @@ int search_max(t_stack *stack_a)
 		tmp =tmp->next;
 	}
 	return max;
-}
-void	sort_three(t_stack *stack_a)
-{
-	int max = search_max(stack_a);
-	if (stack_a->top->indx == max)
-		ra(stack_a);
-	else if(stack_a->top->next->indx == max)
-		rra(stack_a);
-	if(stack_a->top->indx > stack_a->top->next->indx)
-		sa(stack_a);	
 }
