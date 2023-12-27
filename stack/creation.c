@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:24:26 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 08:37:44 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:14:26 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ t_node	*creat_node(int value)
 void	initialize(t_stack *stack)
 {
 	stack->top = NULL;
-	stack->tail = NULL;
 	stack->len = 0;
 }
 

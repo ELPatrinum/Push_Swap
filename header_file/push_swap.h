@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 10:24:02 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:18:34 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct t_node
 typedef struct t_stack
 {
 	t_node	*top;
-	t_node	*tail;
 	int		len;
 }	t_stack;
 
@@ -88,6 +87,8 @@ bool	max_tail_search(t_node *stack, int indx);
 int		search_max(t_stack *stack_a);
 ///////
 void	sort_three(t_stack *stack_a);
+void	sort_4(t_stack *stack_a, t_stack *stack_b);
+void	sort_5(t_stack *stack_a, t_stack *stack_b);
 ////////
 int		indexed_stack_size(t_stack *stack);
 long	get_min(t_stack *stack);

@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 10:23:27 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:19:40 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ void	check_and_sort(t_stack *stack_a, t_stack *stack_b)
 	}
 	else if (stack_a->len == 3)
 		sort_three(stack_a);
-	// else if (stack_a->len == 4 && stack_a->len == 5)
-	// 	sort_small(stack_a, stack_b);
+	else if (stack_a->len == 4)
+		sort_4(stack_a, stack_a);
+	else if (stack_a->len == 5)
+		sort_5(stack_a, stack_b);
 	else
 	{
 		push_to_b(stack_a, stack_b);
