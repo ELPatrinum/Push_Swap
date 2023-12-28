@@ -61,7 +61,6 @@ void	copy_elements(int start_index, char **array, char *result, int len);
 bool	is_empty(t_stack *stack);
 bool	initialize_stack(t_stack *stack_a, t_stack *stack_b, char **av);
 int		stack_size(t_stack *stack);
-int		stack_size(t_stack *stack);
 void	free_stack(t_stack *stack);
 void	initialize(t_stack *stack);
 void	push(t_stack *stack, t_node	*new_node);
