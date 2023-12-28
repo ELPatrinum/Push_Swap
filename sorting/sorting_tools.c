@@ -24,7 +24,7 @@ void	check_and_sort(t_stack *stack_a, t_stack *stack_b)
 	else if (stack_a->len == 3)
 		sort_three(stack_a);
 	else if (stack_a->len == 4)
-		sort_4(stack_a, stack_a);
+		sort_4(stack_a, stack_b);
 	else if (stack_a->len == 5)
 		sort_5(stack_a, stack_b);
 	else
