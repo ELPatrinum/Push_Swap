@@ -6,13 +6,13 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:19:57 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 11:10:58 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/30 18:37:13 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header_file/push_swap.h"
 
-char	*join_strings(char **array, int start_index)
+static char	*join_strings(char **array, int start_index)
 {
 	int		len;
 	int		totallength;

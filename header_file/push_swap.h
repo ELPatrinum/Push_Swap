@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/30 18:27:10 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/30 18:37:47 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ char	**free_(char **arr);
 int		ft_strlen(char *str);
 int		len_without_zero(char *str);
 char	*ft_strdup(const char *str);
-char	*join_strings(char **array, int start_index);
 char	**make_args(char **array);
 char	*ft_strcpy(char *s1, char *s2);
 void	copy_elements(int start_index, char **array, char *result, int len);
