@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 14:07:20 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:15:53 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,7 @@ t_node	*creat_node(int value);
 ///////
 bool	is_already_in(const t_stack *stack, int value);
 bool	init_stack(char **av, t_stack *stack_a);
-bool	is_sorted_ascending(t_stack *stack);
-int		is_sorted(t_stack *stack);
+bool		is_sorted(t_stack *stack);
 void	check_and_sort(t_stack *stack_a, t_stack *stack_b);
 ///////
 void	exec_top(t_stack *stack_a, t_stack *stack_b, int * check, int max);
