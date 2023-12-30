@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <stdio.h>
 # include <stdbool.h>
+# include <fcntl.h>
 
 typedef struct t_node
 {
@@ -96,5 +97,35 @@ void	rrb(t_stack *stack_b);
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
+//// ---------get_next_line----------
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+char	*get_next_line(int fd);
+char	*get_remains(char *remains);
+char	*get_theline(char *str);
+char	*read_from_fd(int fd, char *res);
+int		ft_strlen_pro(char *s, int j, char c);
+int		new_line_check(char *str);
+char	*ft_strjoin(char *s1, char *s2);
+///// ----------------bonus----------------
+void run_push(char *line, t_stack *stack_a, t_stack *stack_b);
+void run_swap(char *line, t_stack *stack_a, t_stack *stack_b);
+void run_rotate(char *line, t_stack *stack_a, t_stack *stack_b);
+void run_reverse_rotate(char *line, t_stack *stack_a, t_stack *stack_b);
+int excute_operation(t_stack *stack_a, t_stack *stack_b);
+//// -----------bonus_op-----------
+void	ft_sa(t_stack *stack_a);
+void	ft_sb(t_stack *stack_b);
+void	ft_pa(t_stack *stack_a, t_stack *stack_b);
+void	ft_pb(t_stack *stack_a, t_stack *stack_b);
+void	ft_ra(t_stack *stack_a);
+void	ft_rb(t_stack *stack_b);
+void	ft_rra(t_stack *stack_a);
+void	ft_rrb(t_stack *stack_b);
+void	ft_ss(t_stack *stack_a, t_stack *stack_b);
+void	ft_rr(t_stack *stack_a, t_stack *stack_b);
+void	ft_rrr(t_stack *stack_a, t_stack *stack_b);
 
 #endif
