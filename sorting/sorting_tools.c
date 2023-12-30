@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/30 01:15:39 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:25:09 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,23 @@ void	sort_three(t_stack *stack_a)
 		sa(stack_a);	
 }
 
-bool	is_sorted(t_stack *stack)
+bool is_sorted(t_stack *stack)
 {
-	t_node *tmp =stack->top;
-	t_node *tmp1;
-	while (tmp)
-	{	
-		tmp1 = stack->top;
-		while (tmp1)
-		{
-			if (tmp1->value < tmp->value)
-				return (false);
-			tmp1 = tmp1->next;
-		}
-		tmp = tmp->next;
-	}
-	return (true);
+    t_node *current = stack->top;
+    t_node *prev = NULL;
+
+    while (current)
+    {
+        if (prev != NULL && current->value < prev->value)
+        {
+            return false;
+        }
+
+        prev = current;
+        current = current->next;
+    }
+
+    return true;
 }
 
 int search_max(t_stack *stack_a)

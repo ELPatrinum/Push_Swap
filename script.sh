@@ -1,8 +1,8 @@
 #!bin/bash
 
-max=100
+max=10
 for((i=0; i < $max; i++))
 do
-	arg=$(seq 0 499| sort -R)
-	./push_swap $arg | wc -l
+	arg=$(seq 0 2| sort -R)
+	./push_swap $arg | ./checker_linux $arg
 done
