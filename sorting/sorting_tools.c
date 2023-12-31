@@ -6,16 +6,14 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/30 01:25:09 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/31 02:58:53 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header_file/push_swap.h"
 
-
 void	check_and_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	
 	if (stack_a->len == 2)
 	{
 		if (!(is_sorted(stack_a)))
@@ -38,45 +36,46 @@ void	check_and_sort(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_three(t_stack *stack_a)
 {
-	int max = search_max(stack_a);
+	int	max;
+
+	max = search_max(stack_a);
 	if (stack_a->top->indx == max)
 		ra(stack_a);
-	else if(stack_a->top->next->indx == max)
+	else if (stack_a->top->next->indx == max)
 		rra(stack_a);
-	if(stack_a->top->indx > stack_a->top->next->indx)
-		sa(stack_a);	
+	if (stack_a->top->indx > stack_a->top->next->indx)
+		sa(stack_a);
 }
 
-bool is_sorted(t_stack *stack)
+bool	is_sorted(t_stack *stack)
 {
-    t_node *current = stack->top;
-    t_node *prev = NULL;
+	t_node	*current;
+	t_node	*prev;
 
-    while (current)
-    {
-        if (prev != NULL && current->value < prev->value)
-        {
-            return false;
-        }
-
-        prev = current;
-        current = current->next;
-    }
-
-    return true;
+	current = stack->top;
+	prev = NULL;
+	while (current)
+	{
+		if (prev != NULL && current->value < prev->value)
+			return (false);
+		prev = current;
+		current = current->next;
+	}
+	return (true);
 }
 
-int search_max(t_stack *stack_a)
+int	search_max(t_stack *stack_a)
 {
-	t_node *tmp;
+	t_node	*tmp;
+	int		max;
 
-	tmp =stack_a->top;
-	int max = tmp->indx;
+	tmp = stack_a->top;
+	max = tmp->indx;
 	while (tmp)
 	{
-		if(max < tmp->indx)
+		if (max < tmp->indx)
 			max = tmp->indx;
-		tmp =tmp->next;
+		tmp = tmp->next;
 	}
-	return max;
+	return (max);
 }

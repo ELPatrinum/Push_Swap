@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:28:41 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/30 18:37:47 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/31 02:57:58 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ void	set_indx(t_stack *stack);
 //// ---------tools----------
 bool	is_already_in(const t_stack *stack, int value);
 bool	init_stack(char **av, t_stack *stack_a);
-bool		is_sorted(t_stack *stack);
+bool	is_sorted(t_stack *stack);
 void	check_and_sort(t_stack *stack_a, t_stack *stack_b);
 long	get_min(t_stack *stack);
 int		indexed_stack_size(t_stack *stack);
 //// ---------sort_tools----------
-void	exec_top(t_stack *stack_a, t_stack *stack_b, int * check, int max);
-void	exec_bot(t_stack *stack_a, t_stack *stack_b , int *check , int max);
+void	exec_top(t_stack *stack_a, t_stack *stack_b, int *check, int max);
+void	exec_bot(t_stack *stack_a, t_stack *stack_b, int *check, int max);
 void	push_to_b(t_stack *stack_a, t_stack *stack_b);
 int		max_search(t_stack *stack, int indx);
 int		get_tail(t_stack *stack);
@@ -110,11 +110,11 @@ int		ft_strlen_pro(char *s, int j, char c);
 int		new_line_check(char *str);
 char	*ft_strjoin(char *s1, char *s2);
 ///// ----------------bonus----------------
-void run_push(char *line, t_stack *stack_a, t_stack *stack_b);
-void run_swap(char *line, t_stack *stack_a, t_stack *stack_b);
-void run_rotate(char *line, t_stack *stack_a, t_stack *stack_b);
-void run_reverse_rotate(char *line, t_stack *stack_a, t_stack *stack_b);
-int excute_operation(t_stack *stack_a, t_stack *stack_b);
+void	run_push(char *line, t_stack *stack_a, t_stack *stack_b);
+void	run_swap(char *line, t_stack *stack_a, t_stack *stack_b);
+void	run_rotate(char *line, t_stack *stack_a, t_stack *stack_b);
+void	run_reverse_rotate(char *line, t_stack *stack_a, t_stack *stack_b);
+int		excute_operation(t_stack *stack_a, t_stack *stack_b);
 //// -----------bonus_op-----------
 void	ft_sa(t_stack *stack_a);
 void	ft_sb(t_stack *stack_b);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 12:38:09 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/21 15:03:01 by muel-bak         ###   ########.fr       */
+/*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
+/*   Updated: 2023/12/31 03:01:48 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,3 @@ void	ft_rr(t_stack *stack_a, t_stack *stack_b)
 	ft_ra(stack_a);
 	ft_rb(stack_b);
 }
-

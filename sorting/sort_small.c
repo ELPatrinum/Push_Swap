@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 02:43:34 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/27 12:24:59 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/31 02:39:00 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int	get_min1(t_stack *stack, int val)
 	}
 	return (min);
 }
-
 
 static int	get_distance(t_stack *stack, int index)
 {

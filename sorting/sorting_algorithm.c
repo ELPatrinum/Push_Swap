@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:30:52 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/30 18:28:42 by muel-bak         ###   ########.fr       */
+/*   Updated: 2023/12/31 02:55:33 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	push_to_b(t_stack *stack_a, t_stack *stack_b)
 {
-	t_indx i;
+	t_indx	i;
 
-	(1 == 1) && (i.l1 =  stack_a->len / 3, i.l2 =  stack_a->len / 6 , i.l3 = 0);
+	(1 == 1) && (i.l1 = stack_a->len / 3, i.l2 = stack_a->len / 6, i.l3 = 0);
 	while (stack_a->len != 3)
 	{
 		if (stack_a->top->indx < i.l1)
@@ -29,9 +29,9 @@ void	push_to_b(t_stack *stack_a, t_stack *stack_b)
 				rb(stack_b);
 			}
 		}
-		else 
+		else
 			ra(stack_a);
-		if (i.l1  - 1 == stack_b->len)
+		if (i.l1 - 1 == stack_b->len)
 		{
 			i.l3 = i.l1;
 			i.l1 += stack_a->len / 3;
@@ -42,11 +42,12 @@ void	push_to_b(t_stack *stack_a, t_stack *stack_b)
 
 void	big_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	int		pos_max;
-	int		max;
+	int	pos_max;
+	int	max;
+	int	check;
 
-	int check = 0; 
-	max = get_tail(stack_a);//tail fixe 
+	check = 0;
+	max = get_tail(stack_a);
 	while (stack_b->len)
 	{
 		pos_max = max_search(stack_b, stack_a->top->indx - 1);

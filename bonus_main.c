@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 23:23:43 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/30 01:14:45 by muel-bak         ###   ########.fr       */
+/*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
+/*   Updated: 2023/12/31 03:02:19 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int ac, char **av)
 {
-  int     check;
+	int		check;
 	t_stack	stack_a;
 	t_stack	stack_b;
 
@@ -31,13 +31,12 @@ int	main(int ac, char **av)
 		return (free_(av), 1);
 	}
 	if (!is_sorted(&stack_a))
-	check = excute_operation(&stack_a, &stack_b);
-  if (!check)
-    write(1, "Error\n", 7);
-  else if (check && !is_sorted(&stack_a))
-      write(1, "KO\n", 3);
-  else if (check && is_sorted(&stack_a))
-    write(1, "OK\n", 3);
-	free_stack(&stack_a);
-	free_(av);
+		check = excute_operation(&stack_a, &stack_b);
+	if (!check)
+		write(1, "Error\n", 7);
+	else if (check && !is_sorted(&stack_a))
+		write(1, "KO\n", 3);
+	else if (check && is_sorted(&stack_a))
+		write(1, "OK\n", 3);
+	return (free_stack(&stack_a), free_(av), 0);
 }
