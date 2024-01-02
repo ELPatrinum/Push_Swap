@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 23:23:43 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/30 01:14:45 by muel-bak         ###   ########.fr       */
+/*   Updated: 2024/01/02 09:52:00 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(int ac, char **av)
 	t_stack	stack_a;
 	t_stack	stack_b;
 
+	if (!av[1])
+		return (0);
 	av = is_valid(ac, av);
 	if (!av)
 	{

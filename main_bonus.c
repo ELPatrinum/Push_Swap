@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/31 03:02:19 by muel-bak         ###   ########.fr       */
+/*   Updated: 2024/01/02 08:20:50 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,24 @@ int	main(int ac, char **av)
 	t_stack	stack_a;
 	t_stack	stack_b;
 
+	if (!av[1])
+		return (0);
 	av = is_valid(ac, av);
+	check = 1;
 	if (!av)
-	{
-		write(2, "Error\n", 7);
-		return (1);
-	}
+		return (write(2, "Error\n", 7), 1);
 	if (!initialize_stack(&stack_a, &stack_b, av))
 	{
 		write(2, "Error\n", 7);
 		free_stack(&stack_a);
 		return (free_(av), 1);
 	}
-	if (!is_sorted(&stack_a))
-		check = excute_operation(&stack_a, &stack_b);
+	check = excute_operation(&stack_a, &stack_b);
 	if (!check)
 		write(1, "Error\n", 7);
 	else if (check && !is_sorted(&stack_a))
 		write(1, "KO\n", 3);
-	else if (check && is_sorted(&stack_a))
+	else if (is_sorted(&stack_a))
 		write(1, "OK\n", 3);
 	return (free_stack(&stack_a), free_(av), 0);
 }

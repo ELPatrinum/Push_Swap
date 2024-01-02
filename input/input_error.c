@@ -6,7 +6,7 @@
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:43:39 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/22 11:24:22 by muel-bak         ###   ########.fr       */
+/*   Updated: 2024/01/02 09:51:38 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ bool	is_digit(char c)
 bool	is_all_digit(char *str, int sign)
 {
 	if (sign == 1)
+	{
 		str++;
+		if (!*str)
+			return (false);
+	}
 	while (*str)
 	{
 		if (!is_digit(*str))
