@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_and_check.c                                   :+:      :+:    :+:   */
+/*   _read_and_check_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muel-bak <muel-bak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:09:11 by muel-bak          #+#    #+#             */
-/*   Updated: 2023/12/31 03:01:33 by muel-bak         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:34:44 by muel-bak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,11 @@ int	excute_operation(t_stack *stack_a, t_stack *stack_b)
 		else if (line[0] == 'r' && line[1] == 'r' && is_valid_rr(line))
 			run_reverse_rotate(line, stack_a, stack_b);
 		else
+		{
+			free(line);
 			return (0);
+		}
+		free(line);
 		line = get_next_line(0);
 	}
 	return (1);
